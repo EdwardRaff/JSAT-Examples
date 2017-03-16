@@ -49,14 +49,14 @@ public class KMeansAndK
         //the data sets we we use, all have only numeric features and a class label
         String[] dataSetName = new String[]
         {
-            "breast-w.arff", "heart-statlog.arff", "ionosphere.arff", "iris.arff", "sonar.arff", 
+            "breast-w", "heart-statlog", "ionosphere", "iris", "sonar", 
         };
         ClassificationDataSet[] dataSets = new ClassificationDataSet[dataSetName.length];
         
         for(int i = 0; i < dataSetName.length; i++)
         {
             ClassLoader classloader = Thread.currentThread().getContextClassLoader();
-            File file = new File(classloader.getResource(dataSetName[i]).getFile());
+            File file = new File(classloader.getResource(dataSetName[i] + ".arff").getFile());
             //We know that there is only one categorical feature for each of these data sets, and it is the class label. So we use '0' as the argument 
             dataSets[i] = ARFFLoader.loadArffFile(file).asClassificationDataSet(0);
             dataSets[i].applyTransform(new Imputer(dataSets[i]));//impute missing values in the dataset
