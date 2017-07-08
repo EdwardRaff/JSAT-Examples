@@ -20,7 +20,7 @@
         <dependency>
             <groupId>com.edwardraff</groupId>
             <artifactId>JSAT</artifactId>
-            <version>0.0.7</version>
+            <version>0.0.8</version>
         </dependency>
         <dependency><!-- This dependency is for some simple UI tools that can be used with JSAT, and used in one of the examples-->
             <groupId>com.github.EdwardRaff</groupId>
